@@ -2,6 +2,8 @@
 // 获取应用实例
 const app = getApp()
 
+// 引用公共js
+var common = require('../../utils/common.js')
 Page({
   data: {
     motto: 'Hello World',
@@ -10,7 +12,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
-    userLocation: ''
+    userLocation: '',
+    array: ['张三1', '张三2', '张三3'],
+    ints: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   },
   // 事件处理函数
   bindViewTap() {
@@ -29,7 +33,7 @@ Page({
     console.log("====>")
   },
   onReachBottom() {
-    console.log("====>>>>")
+
   },
   // 转发事件
   onShareAppMessage(e) {
@@ -68,7 +72,19 @@ Page({
     })
   },
   // 单击事件
-  changeData(){
-    this.getUserProfile()
+  changeData() {
+    common.sayHello("==>")
+  },
+  mtTap(e){
+    console.log(e)
+  },
+  tap1(){
+    console.log("====>A")
+  },
+  tap2(){
+    console.log("====>B")
+  },
+  tap3(){
+    console.log("====>C")
   }
 })

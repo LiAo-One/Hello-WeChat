@@ -18,9 +18,56 @@
     </block>
   </view>
   <view>
-    
+
   </view>
   <view class="usermotto">
     <text bindtap="changeData" class="user-motto">{{motto}}</text>
+    <view wx:for="{{array}}" wx:for-index='id' wx:for-item='item' wx:key='id'>id：{{id + 1}}>>>>{{item}}</view>
+  </view>
+
+  <view wx:if='{{false}}' wx:for="{{ints}}" wx:for-item='i' wx:key='i'>
+    <view wx:for="{{ints}}" wx:for-item='j' wx:key='j'>
+      <view wx:if="{{i <= j}}">
+        {{i}} * {{j}} = {{i*j}}
+      </view>
+    </view>
+  </view>
+
+  <block wx:for="{{array}}" wx:key='index'>
+    <view hidden="false">学号：{{index}}</view>
+    <view hidden="false">姓名：{{item}}</view>
+  </block>
+
+  <view>
+    <button id="mtId" bindtap="mtTap" data-my="hello">按钮事件</button>
+  </view>
+
+  <view id="A" bindtap="tap1">
+    <!-- 冒泡事件，但是没有父节点 不会传递 -->
+    View A
+    <view id="B" catchtap="tap2">
+      <!-- 阻止冒泡事件，不传递给父节点 -->
+      View B
+      <view id="C" bindtap="tap3">
+        <!-- 冒泡事件，传递给父节点B -->
+        View C
+      </view>
+    </view>
+  </view>
+
+  <view id="A" bindtap="tap1" capture-bind:tap="tap1">
+    View A
+    <view id="B" bindtap="tap2" capture-catch:tap="tap2"><!-- 在冒泡事件前捕获 并取消 触发 A B -->
+      View B
+      <view id="C" bindtap="tap3" capture-bind:tap="tap3"><!-- 在冒泡前捕获并执行 被 2 捕获并取消 所以不会触发 3-->
+        View C
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <text>引用页面模板</text>
+    <import src="../home/index.wxml"></import>
+    <template is="tmpl1"></template>
   </view>
 </view>
