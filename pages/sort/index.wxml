@@ -2,7 +2,7 @@
   <view>我是项目1</view>
   <view>我是项目2</view>
   <view>我是项目3</view>
-  <view>我是项目4</view>
+  <!-- <view>我是项目4</view>
   <view>我是项目5</view>
-  <view>我是项目6</view>
+  <view>我是项目6</view> -->
 </view>
