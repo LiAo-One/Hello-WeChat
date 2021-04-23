@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/sort/index",
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/index",
-    "pages/sort/index",
     "pages/shoppingCart/index",
     "pages/mine/index"
   ],
@@ -25,12 +25,12 @@
     ],
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
         "pagePath": "pages/sort/index",
         "text": "分类"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
       },
       {
         "pagePath": "pages/shoppingCart/index",

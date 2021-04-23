@@ -1,1 +1,22 @@
-/* pages/sort/index.wxss */
+.test{
+  /* 设置为flex 布局 */
+  display: flex;
+  /* column：按照主轴从上往下 */
+  /* flex-direction: column; */
+
+  /* column：按照主轴从下往上 */
+  /* flex-direction: column-reverse; */
+
+  /* row：按照主轴从左至右 靠左 */
+  /* flex-direction: row; */
+
+  /* row：按照主轴从右至左 靠右 */
+  /* flex-direction: row-reverse; */
+
+  /* 自动换行 */
+  /* flex-wrap: wrap; */
+
+  /* 取消自动换行 */
+  flex-wrap: nowrap;
+
+}
