@@ -1,1 +1,21 @@
-/* pages/shoppingCart/index.wxss */
+.title{
+  text-align: center;
+}
+
+.view_parent{
+  width: 100%;
+  height: 300rpx;
+  background-color: burlywood;
+}
+
+.view_son{
+  width: 50%;
+  height: 150rpx;
+  margin-top: 50rpx;
+  margin-left: 25%;
+  background: cornsilk;
+}
+
+.view_hover{
+  background-color: coral;
+}

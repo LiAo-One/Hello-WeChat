@@ -1,4 +1,4 @@
-.test{
+.test {
   /* 设置为flex 布局 */
   display: flex;
 
@@ -14,6 +14,10 @@
   /* row：按照主轴从右至左 靠右 */
   /* flex-direction: row-reverse; */
 
+
+  /* 项目换行 */
+
+
   /* 自动换行 */
   /* flex-wrap: wrap; */
 
@@ -23,9 +27,61 @@
   /* 往主轴上方向换行 */
   /* flex-wrap: wrap-reverse; */
 
+
+  /* 项目间距 */
+
+
   /* 项目对齐主轴起点 项目不留空隙 */
   /* justify-content: flex-start; */
 
   /* 居中，项目之间不留空隙 */
   /* justify-content: center; */
+
+  /* 项目对其主轴终点 不留空隙 */
+  /* justify-content: flex-end; */
+
+  /* 间距相等 与起点和终点距离为0 */
+  /* justify-content: space-between; */
+
+  /* 间距相等 起点和终点为中间距离的一半 */
+  /* justify-content: space-around; */
+
+  /* 间距相等 起点与终点也相等 */
+  /* justify-content: space-evenly; */
+
+  /* 切换主轴与交叉轴位置 */
+  /* flex-direction: column; */
+
+  /* 设置项目填满交叉轴 */
+  /* align-items: stretch; */
+
+  /* 设置项目与交叉轴起点对齐 */
+  /* align-items: flex-start; */
+
+  /* 交叉轴居中 */
+  /* align-items: center; */
+
+  /* 对齐交叉轴起点 */
+  /* align-items: flex-start; */
+
+  /* 对齐交叉轴终点 */
+  /* align-items: flex-end; */
+
+  /* align-items: baseline; */
+
+  /* 设置项目在交叉轴上的对齐方式 和空间分配 */
+  /* align-content: stretch; */
+
+}
+
+.item1 {
+  align-self: flex-start;
+}
+
+.item2 {
+  align-self: center;
+}
+
+.item3 {
+  align-self: flex-end;
 }

@@ -1,9 +1,10 @@
 <view class="test">
-  <view>我是项目1</view>
-  <view>我是项目2</view>
-  <view>我是项目3</view>
-  <view>测试远程仓库</view>
-  <!-- <view>我是项目4</view>
-  <view>我是项目5</view>
-  <view>我是项目6</view> -->
+  <!-- order: 主轴方向排序 数值越小 越靠前 -->
+  <!-- flex-shrink: 主轴方向收缩 数值越小 收缩越小  -->
+  
+  <view class="item1">我是项目1</view>
+  <button class="item2">我是项目2</button>
+  <view class="item3">我是项目3</view>
 </view>
+
+<movable-view></movable-view>

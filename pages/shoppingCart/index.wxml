@@ -1,2 +1,7 @@
-<!--pages/shoppingCart/index.wxml-->
-<text>pages/shoppingCart/index.wxml</text>
+<view class="title">视图容器view的简单使用</view>
+<view class="demo-box">
+  <view class="title">不阻止父容器的view_hover</view>
+  <view class='view_parent title' hover-class="view_hover">我是父容器
+    <view class='view_son title'>我是子容器</view>
+  </view>
+</view>
