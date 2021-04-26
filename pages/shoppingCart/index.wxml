@@ -2,6 +2,76 @@
 <view class="demo-box">
   <view class="title">不阻止父容器的view_hover</view>
   <view class='view_parent title' hover-class="view_hover">我是父容器
-    <view class='view_son title'>我是子容器</view>
+    <view class='view_son title' hover-class="view_hover">我是子容器</view>
   </view>
+</view>
+
+
+<view class="demo-box">
+  <view class="title">阻止父容器的view_hover</view>
+  <view class='view_parent title' hover-class="view_hover">我是父容器
+    <view class='view_son title' hover-class="view_hover" hover-stop-propagation>我是子容器</view>
+  </view>
+</view>
+
+<view class="demo-box">
+  <view class="title"  bindtap="goTop">纵向滚动区域</view>
+  <scroll-view scroll-y bindscroll="scrollEvent" scroll-top="{{topNum}}" bindscrolltoupper="toTopLeft" bindscrolltolower="toBotRight">
+    <view class="scroll-item-y">第一个</view>
+    <view class="scroll-item-y">第二个</view>
+    <view class="scroll-item-y">第三个</view>
+    <view class="scroll-item-y">第四个</view>
+  </scroll-view>
+</view>
+
+<view class="demo-box">
+  <view class="title">横向滚动区域</view>
+  <scroll-view scroll-x>
+    <view class="scroll-item-x">第一个</view>
+    <view class="scroll-item-x">第二个</view>
+    <view class="scroll-item-x">第三个</view>
+    <view class="scroll-item-x">第四个</view>
+
+    <text id="dele">删除</text>
+  </scroll-view>
+</view>
+
+<view class="demo-box">
+  <view class="title">轮播图</view>
+  <swiper indicator-dots="true" autoplay="true" interval="500" duration="500" circular="true">
+    <swiper-item>
+      <view class="swiper-item">第一个</view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-item">第二个</view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-item">第三个</view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-item">第四个</view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="title">movable-view 的使用</view>
+<view class="demo-box">
+  <view class="title">movable-view 在 movable-area中的使用</view>
+  <movable-area>
+    <movable-view id="mv01" direction="all"></movable-view>
+  </movable-area>
+</view>
+
+<view class="demo-box">
+  <view class="title">movable-view 超出 movable-area</view>
+  <movable-area>
+    <movable-view id="mv02" direction="all"></movable-view>
+  </movable-area>
+</view>
+
+<view class="demo-box">
+  <view class="title">可缩放的 movable-area</view>
+  <movable-area>
+    <movable-view id="mv03" direction="all" scale="true" out-of-bounds="true"></movable-view>
+  </movable-area>
 </view>

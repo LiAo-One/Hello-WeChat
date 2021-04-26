@@ -7,7 +7,30 @@ Page({
   data: {
 
   },
+  goTop(e) {
+    this.setData({
+      topNum: 0
+    })
 
+    console.log(this.data.topNum)
+  },
+
+  // 滚动到顶部 和 左边触发事件
+  toTopLeft(e) {
+    console.log(e)
+    console.log("滚动到了顶部")
+  },
+
+  // 滚动到底部 右边触发事件
+  toBotRight(e) {
+    console.log(e)
+    console.log("滚动到了底部")
+  },
+  // 滚动事件
+  scrollEvent(e) {
+    console.log(e);
+    console.log("滚事件")
+  },
   /**
    * 生命周期函数--监听页面加载
    */
