@@ -1,4 +1,4 @@
-<view class="title">视图容器view的简单使用</view>
+<!-- <view class="title">视图容器view的简单使用</view>
 <view class="demo-box">
   <view class="title">不阻止父容器的view_hover</view>
   <view class='view_parent title' hover-class="view_hover">我是父容器
@@ -74,4 +74,107 @@
   <movable-area>
     <movable-view id="mv03" direction="all" scale="true" out-of-bounds="true"></movable-view>
   </movable-area>
+</view>
+
+<view class="demo-box">
+<view class="title">视图容器 cover-view 的简单使用</view>
+<map>
+  <cover-view>
+    <cover-view>Cover-View</cover-view>
+    <cover-image src="../home/img/home.png"></cover-image>
+    <button type="primary" size="mini">Button</button>
+  </cover-view>
+</map>
+</view>
+
+<view class="demo-box">
+  <view class="title">icon Type 使用</view>
+  <block wx:for="{{iconType}}">
+    <icon type="{{item}}" size="36"></icon>
+  </block>
+</view>
+
+<view class="demo-box">
+  <view class="title">icon Color 使用</view>
+  <block wx:for="{{iconColor}}">
+    <icon type="info" color="{{item}}" size="36"></icon>
+  </block>
+</view>
+
+<view class="demo-box">
+  <view class="title">icon Size 使用</view>
+  <block wx:for="{{icinSize}}">
+    <icon type="success" size="{{item}}"></icon>
+  </block>
+</view>
+
+<view class="demo-box">
+  <view class="title">文本可选</view>
+  <text selectable="false">这是一段可选文本</text>
+  <text selectable="true">这是一段不可选文本</text>
+</view>
+
+<view class="demo-box">
+  <view class="title">文本节点</view>
+  <rich-text nodes="{{nodes}}"></rich-text>
+</view>
+
+<view class="demo-box">
+  <view class="title">元素节点 style 样式</view>
+  <rich-text nodes="{{nodes01}}"></rich-text>
+</view>
+
+<view class="demo-box">
+  <view class="title">富文本组件 class 样式</view>
+  <rich-text nodes="{{nodes02}}"></rich-text>
+</view>
+
+
+<view class="demo-box">
+  <view class="title">进度条 显示百分比</view>
+  <progress percent="25" show-info="true"></progress>
+</view>
+
+<view class="demo-box">
+  <view class="title">进度条 线条宽度为20rpx的</view>
+  <progress percent="50" stroke-width="20"></progress>
+</view>
+
+<view class="demo-box">
+  <view class="title">进度条 颜色自定义</view>
+  <progress percent="80" activeColor="#45326E"></progress>
+</view>
+
+
+<view class="demo-box">
+  <view class="title">进度条 动画效果</view>
+  <progress percent="100" active="true" activeColor="#45326E" backgroundColor="#9370DB" show-info="true"></progress>
+</view>
+
+<view class="title">Button 组件的使用</view>
+<view class="demo-box">
+  <view class="title">迷你按钮</view>
+  <button type="primarty" size="mini">主要按钮</button>
+  <button type="default" size="mini">次要按钮</button>
+  <button type="warn" size="mini">警告按钮</button>
+</view>
+
+<view class="demo-box">
+  <view class="title">按钮状态</view>
+  <button>普通按钮</button>
+  <button disabled="true">禁用按钮</button>
+  <button type="default" loading="true">加载按钮</button>
+</view> -->
+
+<view class="demo-box">
+  <view class="title">按钮监听</view>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="getUserInfo">获取用户信息</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="contact">客服会话</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="share">用户转发</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="getPhoneNumber">用户手机号</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="launchApp">打开APP</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="feedback">授权设置页</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="lan">返回语言</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="session-from">会话来源</button>
+  <button type="default" bindgetuserinfo="getUserDetail" open-type="session-from">会话来源</button>
 </view>

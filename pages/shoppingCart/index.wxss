@@ -57,22 +57,50 @@ scroll-view {
   background-color: #2551cc;
 }
 
-movable-area{
+movable-area {
   width: 300rpx;
   height: 300rpx;
   background-color: lightblue;
 }
 
-movable-view{
+movable-view {
   background-color: red;
 }
 
-#mv01,#mv03{
+#mv01,
+#mv03 {
   width: 100rpx;
   height: 100rpx;
 }
 
-#mv02{
+#mv02 {
   width: 180rpx;
   height: 180rpx;
+}
+
+map {
+  width: 100%;
+  height: 600rpx;
+}
+
+cover-view {
+  width: 200rpx;
+  background-color: rosybrown;
+  margin: 0 auto;
+}
+
+cover-image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+}
+
+.myStyle {
+  color: #45326E;
+  line-height: 60rpx;
+  font-weight: bold;
+}
+
+button {
+  margin: 10rpx;
 }

@@ -5,7 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
+    iconType: ['success', 'success-no-circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'cleal'],
+    iconColor: ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'],
+    icinSize: [20, 25, 30, 35, 40, 45, 50],
+    nodes: '<div style="line-height: 60px; color: red;">Hello World!</div>',
 
+    nodes01: [{
+      name: 'div',
+      attrs: {
+        style: 'line-height: 30px; color: blue; font-weigth: bold',
+      },
+      children: [{
+        type: 'text',
+        text: 'Hello World'
+      }]
+    }],
+    nodes02: [{
+      name: 'div',
+      attrs: {
+        class: 'myStyle'
+      },
+      children: [{
+        type: 'text',
+        text: 'Hello World'
+      }]
+    }]
   },
   goTop(e) {
     this.setData({
@@ -30,6 +54,10 @@ Page({
   scrollEvent(e) {
     console.log(e);
     console.log("滚事件")
+  },
+  getUserDetail: function (e) {
+    console.log(e.detail.userInfo)
+    console.log(e)
   },
   /**
    * 生命周期函数--监听页面加载
