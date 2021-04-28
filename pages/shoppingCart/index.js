@@ -9,7 +9,6 @@ Page({
     iconColor: ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'],
     icinSize: [20, 25, 30, 35, 40, 45, 50],
     nodes: '<div style="line-height: 60px; color: red;">Hello World!</div>',
-
     nodes01: [{
       name: 'div',
       attrs: {
@@ -29,7 +28,16 @@ Page({
         type: 'text',
         text: 'Hello World'
       }]
-    }]
+    }],
+    selector: '',
+    selectItems: ['苹果', '香蕉', '橘子']
+  },
+  selectorChange: function (e) {
+
+    console.log(e)
+    this.setData({
+      selector: e.detail.value
+    })
   },
   goTop(e) {
     this.setData({
@@ -55,9 +63,26 @@ Page({
     console.log(e);
     console.log("滚事件")
   },
+  // 多选框选中事件
   getUserDetail: function (e) {
     console.log(e.detail.userInfo)
     console.log(e)
+  },
+  getInput: function (e) {
+    console.log("输入触发事件===>" + e.detail.value)
+  },
+  getBlur: function (e) {
+    console.log("失去焦点触发事件===>" + e.detail.value)
+  },
+  onSubmit: function (e) {
+    console.log(e)
+  },
+  onReset: function (e) {
+    console.log(e)
+  },
+  checkBoxChange: function (e) {
+    // 多选框的选中数据集合
+    console.log(e.detail.value)
   },
   /**
    * 生命周期函数--监听页面加载

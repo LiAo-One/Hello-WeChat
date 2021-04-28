@@ -104,3 +104,14 @@ cover-image {
 button {
   margin: 10rpx;
 }
+
+input {
+  border: 1rpx solid #45326E;
+  height: 60rpx;
+
+  margin: 20rpx;
+}
+
+button {
+  margin: 20rpx;
+}

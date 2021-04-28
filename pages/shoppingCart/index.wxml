@@ -164,7 +164,7 @@
   <button>普通按钮</button>
   <button disabled="true">禁用按钮</button>
   <button type="default" loading="true">加载按钮</button>
-</view> -->
+</view> 
 
 <view class="demo-box">
   <view class="title">按钮监听</view>
@@ -178,3 +178,84 @@
   <button type="default" bindgetuserinfo="getUserDetail" open-type="session-from">会话来源</button>
   <button type="default" bindgetuserinfo="getUserDetail" open-type="session-from">会话来源</button>
 </view>
+
+
+<view class="demo-box">
+  <view class="title">checkbox</view>
+  <checkbox-group bindchange="checkBoxChange">
+    <checkbox value="a" checked="true">苹果</checkbox>
+    <checkbox disabled="true">香蕉</checkbox>
+    <checkbox value="j">橘子</checkbox>
+    <checkbox value="n" color="#45326E">柠檬</checkbox>
+  </checkbox-group>
+</view>
+
+
+<view class="demo-box">
+  <view class="title">初始文本</view>
+  <input value="text" />
+</view>
+
+<view class="title demo-box">文本输入框</view>
+<input type="text" />
+
+<view class="title demo-box">数字输入框</view>
+<input type="number" />
+
+<view class="title demo-box">身份证输入</view>
+<input type="idcard" />
+
+<view class="title demo-box">带小数点</view>
+<input type="digit" />
+
+<view class="title demo-box">显示发送</view>
+<input confirm-type="send" />
+
+<view class="title demo-box">显示搜索</view>
+<input confirm-type="search" />
+
+<view class="title demo-box">显示下一页</view>
+<input confirm-type="next" />
+
+<view class="title demo-box">显示前往</view>
+<input confirm-type="go" />
+
+<view class="title demo-box">显示完成</view>
+<input confirm-type="done" />
+
+<view class="title demo-box">获取焦点拉起键盘</view>
+<input focus="true" />
+
+<view class="title demo-box">placeholder-style</view>
+<input placeholder-style='color:red;font-weigth:bold' />
+
+<view class="title demo-box">输入事件监听</view>
+<input bindinput="getInput" bindblur="getBlur" placeholder-style='color:red;font-weigth:bold' />
+
+<view class="title demo-box">最大输入长度</view>
+<input maxlength="10" />
+
+<view class="title demo-box">label</view>
+<checkbox-group bindchange="checkBoxChange">
+  <checkbox id="apple" value="apple"/>
+  <label for="apple">苹果</label>
+</checkbox-group>
+
+
+<view class="title demo-box">标间直接放入 label中 for 优先级最高 有多个控件优先触发第一个</view>
+<checkbox-group bindchange="checkBoxChange">
+  <label><checkbox value="apple"/>苹果</label>
+</checkbox-group> 
+
+<view class="title demo-box">form 组件</view>
+<form bindsubmit="onSubmit" bindreset="onReset">
+  <input name="usernamne" type="text" placeholder='请输入用户名'/>
+  <input name="password" password placeholder='请输入密码'/>
+  <button size="mini" form-type="submit">提交</button>
+  <button size="mini" form-type="reset">重置</button>
+</form>-->
+
+<view class="title demo-box">普通选择器</view>
+<picker mode="selector" range='{{selectItems}}' bindchange="selectorChange">
+  <view class="title">当前选择{{selector}}</view>
+</picker>
