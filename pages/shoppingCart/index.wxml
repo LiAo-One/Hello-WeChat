@@ -257,5 +257,25 @@
 
 <view class="title demo-box">普通选择器</view>
 <picker mode="selector" range='{{selectItems}}' bindchange="selectorChange">
-  <view class="title">当前选择{{selector}}</view>
+  <view class="title">当前选择->>>{{selector}}</view>
+</picker>
+
+<view class="title demo-box">多列选择器</view>
+<picker mode="multiSelector" range='{{multiSelectorItems}}' bindchange="multiSelectorChange">
+  <view class="title">当前选择->>>{{multiSelector}}</view>
+</picker>
+
+<view class="title demo-box">时间选择器</view>
+<picker mode="time" bindchange="timeChange">
+  <view class="title">当前选择->>>{{time}}</view>
+</picker>
+
+<view class="title demo-box">日期选择器</view>
+<picker mode="date" bindchange="dateChange" start="2021-04-29" end="2022-04-29">
+  <view class="title">当前选择->>>{{date}}</view>
+</picker>
+
+<view class="title demo-box">省份选择器</view>
+<picker mode="region" bindchange="regionChange">
+  <view class="title">当前选择->>>{{region}}</view>
 </picker>

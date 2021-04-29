@@ -30,13 +30,71 @@ Page({
       }]
     }],
     selector: '',
-    selectItems: ['苹果', '香蕉', '橘子']
+    selectItems: ['苹果', '香蕉', '橘子'],
+    multiSelectorItems: [
+      ['蛋花汤', '苹果汤'],
+      ['鸡排', '牛排', '鱼排'],
+      ['苹果', '香蕉', '橘子']
+    ],
+    // 存放多列选择的结果值
+    multiSelector: '',
+    // 存放选择事件值
+    time: '',
+    // 存放日期选择时间值
+    date: '',
+    // 存放省份的值
+    region: ''
   },
+  regionChange(e) {
+    let value = e.detail.value;
+    this.setData({
+      region: value
+    })
+  },
+  // 日期选择器
+  dateChange(e) {
+    let value = e.detail.value;
+    this.setData({
+      date: value
+    })
+  },
+  // 时间选择事件
+  timeChange(e) {
+    let value = e.detail.value;
+
+    this.setData({
+      time: value
+    })
+  },
+  // 多列选择器触发事件
+  multiSelectorChange(e) {
+    // 获取选择下标的集合
+    let arrayIndex = e.detail.value;
+
+    // 获取数据
+    let array = this.data.multiSelectorItems;
+    // 用于存放选中的元素集合
+    let valye = new Array();
+    for (let i = 0; i < arrayIndex.length; i++) {
+      // 获取到对应列的下标
+      let k = arrayIndex[i];
+      // 获取到对应列下标值
+      let v = array[i][k];
+      // 添加进集合
+      valye.push(v);
+    }
+
+    this.setData({
+      multiSelector: valye
+    })
+  },
+  // 单列选择器触发事件
   selectorChange: function (e) {
 
-    console.log(e)
+    var value = this.data.selectItems[e.detail.value];
     this.setData({
-      selector: e.detail.value
+
+      selector: value
     })
   },
   goTop(e) {
