@@ -5,8 +5,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/index",
-    
-    "pages/mine/index"
+    "pages/mine/index",
+    "pages/new/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

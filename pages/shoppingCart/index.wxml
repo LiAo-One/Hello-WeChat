@@ -253,7 +253,7 @@
   <input name="password" password placeholder='请输入密码'/>
   <button size="mini" form-type="submit">提交</button>
   <button size="mini" form-type="reset">重置</button>
-</form>-->
+</form>
 
 <view class="title demo-box">普通选择器</view>
 <picker mode="selector" range='{{selectItems}}' bindchange="selectorChange">
@@ -279,3 +279,75 @@
 <picker mode="region" bindchange="regionChange">
   <view class="title">当前选择->>>{{region}}</view>
 </picker>
+
+<view class="title">picker-view</view>
+<view class="demo-box">
+  <view class="title">{{menu}}</view>
+    <picker-view class="title" value="{{value}}" indicator-style="height:50rpx;" bindchange="pickerViewChange">
+      <picker-view-column>
+        <view class="col" wx:for="{{soup}}" wx:key='s{{index}}'>{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="col" wx:for="{{maincourse}}" wx:key='m{{idex}}'>{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="col" wx:for="{{dessert}}" wx:key='d{{idex}}'>{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+</view>
+
+
+<view class="title">radio-使用</view>
+<radio-group bindchange="radioGroupChange">
+  <radio value="西瓜" color="#45326E" checked="true" disabled="false">西瓜</radio>
+  <radio value="菠萝" color="#45326E" checked="true">菠萝</radio>
+  <radio value="香蕉" color="#45326E" checked="true">香蕉</radio>
+</radio-group>
+<view class="title">slider-滑动选择器-使用</view>
+
+<view class="demo-box">
+  <view class="title">默认</view>
+  <slider min="0" max="100"></slider>
+  <view class="title">步长2</view>
+  <slider min="0" max="100" step="2"></slider>
+  <view class="title">选中颜色</view>
+  <slider min="0" max="100" step="2" activeColor="#45326E"></slider>
+  <view class="title">滑块大小</view>
+  <slider min="0" max="100" step="2" activeColor="#45326E" block-size="18"></slider>
+  <view class="title">滑块颜色</view>
+  <slider min="0" max="100" step="2" activeColor="#45326E" block-size="18" block-color="#45326E"></slider>
+  <view class="title">显示数值</view>
+  <slider min="0" max="100" step="2" activeColor="#45326E" block-size="18" block-color="#45326E" show-value="true">
+  </slider>
+  <view class="title">滑动事件</view>
+  <slider min="0" max="100" step="2" activeColor="#45326E" block-size="18" block-color="#45326E" show-value="true"
+    bindchanging="sliderBindChanging">
+  </slider>
+  <view class="title">滑动停止事件</view>
+  <slider min="0" max="100" step="2" activeColor="#45326E" block-size="18" block-color="#45326E" show-value="true"
+    bindchange="sliderBindChange">
+  </slider>
+</view>
+<view class="title">switch</view>
+<switch type="switch" color="#45326E" bindchange="switchBindChange">switch</switch>
+<switch type="checkbox" color="#45326E">checkbox</switch>
+
+<view class="title">文本域-自动变高</view>
+<textarea auto-height placeholder="123"></textarea>
+
+<view class="title">文本域-红色文字占位符</view>
+<textarea placeholder="红色占位符" placeholder-style="color:red"></textarea>
+
+<view class="title">文本域-禁用</view>
+<textarea disabled placeholder="文本框禁用"></textarea> -->
+
+<view class="title">页面跳转--不可返回</view>
+<navigator url="../new/index?data=LiAo">
+  <button type="primary">单击跳转</button>
+</navigator>
+
+
+<view class="title">页面跳转-可返回</view>
+<navigator url="../new/index?data=LiAo" open-type="redirect">
+  <button type="primary">单击跳转</button>
+</navigator>

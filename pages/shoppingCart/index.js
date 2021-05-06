@@ -43,8 +43,43 @@ Page({
     // 存放日期选择时间值
     date: '',
     // 存放省份的值
-    region: ''
+    region: '',
+    soup: ['a', 'b', 'c'],
+    maincourse: ['aa', 'bb', 'cc'],
+    dessert: ['aaa', 'bbb', 'ccc'],
+    value: [1, 1, 1],
+    menu: []
   },
+  // switch 绑定事件
+  switchBindChange(e) {
+    console.log(e.detail.value)
+  },
+  // 滑动停止事件
+  sliderBindChanging(e) {
+    console.log(e.detail.value)
+  },
+  // 滑动事件
+  sliderBindChange(e) {
+    console.log(e.detail.value)
+  },
+  // 单选按钮事件
+  radioGroupChange(e) {
+    console.log(e.detail.value)
+  },
+  // 页面嵌入滚动器 滚动事件
+  pickerViewChange(e) {
+    let indexs = e.detail.value;
+    let menu = [];
+
+    menu.push(this.data.soup[indexs[0]])
+    menu.push(this.data.maincourse[indexs[1]])
+    menu.push(this.data.dessert[indexs[2]])
+
+    this.setData({
+      menu: menu
+    });
+  },
+  // 省份选择触发事件
   regionChange(e) {
     let value = e.detail.value;
     this.setData({
@@ -145,9 +180,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
