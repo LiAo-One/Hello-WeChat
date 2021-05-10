@@ -48,7 +48,129 @@ Page({
     maincourse: ['aa', 'bb', 'cc'],
     dessert: ['aaa', 'bbb', 'ccc'],
     value: [1, 1, 1],
-    menu: []
+    menu: [],
+    poster: 'https://bkimg.cdn.bcebos.com/pic/902397dda144ad345982f081c2e91bf431adcbef2f28?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto',
+    name: '星辰大海',
+    author: '黄霄云',
+    src: 'http://music.163.com/song/media/outer/url?id=1811921555.mp3',
+    videoSrc: 'http://1252596634.vod2.myqcloud.com/52afcb8dvodcq1252596634/77cc4d725285890818077040768/U0ZqA1QnqdQA.mp4',
+    danmuList: [],
+    danmuData: [{
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 1
+      },
+      {
+        text: '都几点了，你才来',
+        color: '#45326E',
+        time: 2
+      },
+      {
+        text: '都几点了，你才来',
+        color: '#45326E',
+        time: 3
+      },
+      {
+        text: '都几点了，你才来',
+        color: '#45326E',
+        time: 4
+      },
+      {
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 5
+      },
+      {
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 6
+      },
+      {
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 7
+      },
+    ]
+  },
+  // 关闭弹幕
+  clerDanmu: function () {
+    this.data.danmuList = null;
+    this.setData({
+      danmuList: null
+    })
+  },
+  // 开启弹幕
+  openDanmu: function () {
+    this.data.danmuList = this.data.danmuData;
+    this.setData({
+      danmuList: this.data.danmuData
+    })
+  },
+  // 添加弹幕
+  addDanmu: function () {
+    var danmu = [{
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 1
+      },
+      {
+        text: '都几点了，你才来',
+        color: '#45326E',
+        time: 2
+      },
+      {
+        text: '都几点了，你才来',
+        color: '#45326E',
+        time: 3
+      },
+      {
+        text: '都几点了，你才来',
+        color: '#45326E',
+        time: 4
+      },
+      {
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 5
+      },
+      {
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 6
+      },
+      {
+        text: '来都来了，看完就回去了',
+        color: '#45326E',
+        time: 7
+      },
+    ]
+
+    this.data.danmuList = danmu;
+
+    // 绑定页面数据
+    this.setData({
+      danmuList: danmu
+    })
+
+    console.log(this.data.danmuList)
+    
+  },
+  // 播放
+  audioPlay: function () {
+    this.audioCtx.play()
+  },
+  // 暂停
+  audioPause: function () {
+    this.audioCtx.pause()
+  },
+  // 设置当前播放时间为14秒
+  audio14: function () {
+    this.audioCtx.play()
+    this.audioCtx.seek(175)
+  },
+  // 重新播放
+  audioStart: function () {
+    this.audioCtx.seek(0)
   },
   // switch 绑定事件
   switchBindChange(e) {
@@ -186,7 +308,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   /**

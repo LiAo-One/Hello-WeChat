@@ -339,7 +339,7 @@
 <textarea placeholder="红色占位符" placeholder-style="color:red"></textarea>
 
 <view class="title">文本域-禁用</view>
-<textarea disabled placeholder="文本框禁用"></textarea> -->
+<textarea disabled placeholder="文本框禁用"></textarea>
 
 <view class="title">页面跳转--不可返回</view>
 <navigator url="../new/index?data=LiAo">
@@ -350,4 +350,107 @@
 <view class="title">页面跳转-可返回</view>
 <navigator url="../new/index?data=LiAo" open-type="redirect">
   <button type="primary">单击跳转</button>
-</navigator>
+</navigator> 
+
+<view class="title">媒体组件audiod的使用</view>
+<view class="demo-box">
+  <audio id="myAudio" poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" controls="true"
+    loop></audio>
+  <button size="mini" bindtap="audioPlay">播放</button>
+  <button size="mini" bindtap="audioPause">暂停</button>
+  <button size="mini" bindtap="audio14">go_to2:55</button>
+  <button size="mini" bindtap="audioStart">回到开头</button>
+</view>
+
+<view class="title">image组件的使用</view>
+<view class="demo-box">
+  <view class="title">缩放模式--scaleToFill</view>
+  <image src="{{poster}}" mode="scaleToFill"></image>
+  <view class="title">不保持纵横比，使图片完全自适应</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">缩放模式--aspectFit</view>
+  <image src="{{poster}}" mode="aspectFit"></image>
+  <view class="title">保持纵横比，完全显示图片长边</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">缩放模式--aspectFill</view>
+  <image src="{{poster}}" mode="aspectFill"></image>
+  <view class="title">保持纵横比，完全显示图片短边</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">缩放模式--widthFix</view>
+  <image src="{{poster}}" mode="widthFix"></image>
+  <view class="title">宽度不变，高度自动变化</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="top"></image>
+  <view class="title">裁剪模式，只显示顶部</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="bottom"></image>
+  <view class="title">裁剪模式，只显示底部</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="left"></image>
+  <view class="title">裁剪模式，只显示左边</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="right"></image>
+  <view class="title">裁剪模式，只显示右边</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="center"></image>
+  <view class="title">裁剪模式，只显示中间</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="top left"></image>
+  <view class="title">裁剪模式，只显示左上</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="top right"></image>
+  <view class="title">裁剪模式，只显示右上</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="bottom left"></image>
+  <view class="title">裁剪模式，只显示左下</view>
+</view>
+
+<view class="demo-box">
+  <view class="title">裁剪模式</view>
+  <image src="{{poster}}" mode="bottom right"></image>
+  <view class="title">裁剪模式，只显示右下</view>
+</view> -->
+<!-- http://1252596634.vod2.myqcloud.com/2999b935vodtranscq1252596634/77cc4d725285890818077040768/coverBySnapshot_10_0.jpg -->
+
+<!-- http://1252596634.vod2.myqcloud.com/52afcb8dvodcq1252596634/77cc4d725285890818077040768/U0ZqA1QnqdQA.mp4 -->
+
+<!-- 	downloadVideo.mp4 -->
+<view class="demo-box">
+  <view class="title">视频组件</view>
+  <video src="{{videoSrc}}"
+    poster="http://1252596634.vod2.myqcloud.com/2999b935vodtranscq1252596634/77cc4d725285890818077040768/coverBySnapshot_10_0.jpg"
+    danmu-list="{{danmuList}}"></video>
+  <button type="mini" bindtap="addDanmu">添加弹幕</button>
+  <button type="mini" bindtap="openDanmu">开启弹幕</button>
+  <button type="mini" bindtap="clerDanmu">关闭弹幕</button>
+</view>
