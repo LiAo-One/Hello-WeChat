@@ -1,5 +1,32 @@
 // pages/shoppingCart/index.js
+import request from '../../utils/network.js'
 Page({
+
+  
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.ctx = wx.createCameraContext();
+
+    this.rm = wx.getRecorderManager()
+    this.rm.onStop((res) => {
+      const audioCtx = wx.createInnerAudioContext();
+      console.log(res)
+      console.log(audioCtx)
+      audioCtx.src = res.tempFilePath;
+      audioCtx.play();
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    this.audioCtx = wx.createAudioContext('myAudio')
+    this.vedioCtx = wx.createVideoContext('myVedio')
+
+  },
 
   /**
    * 页面的初始数据
@@ -90,7 +117,163 @@ Page({
         color: '#45326E',
         time: 7
       },
-    ]
+    ],
+    phohSrc: '',
+    videoSrcs: '',
+
+    // 地图组件
+    markers: [{
+      id: "31968427",
+      latitude: '31.968427',
+      longitude: '118.798891',
+      title: '南京南站',
+      rotate: '25',
+      alpha: '0.2',
+      width: '100rpx',
+      height: '100rpx',
+      callout: {
+        content: '你好',
+        color: '#45326E'
+      },
+      label: {
+        content: '123',
+      },
+
+
+    }, {
+      id: "32087283",
+      latitude: '32.087283',
+      longitude: '118.797635',
+      title: '南京站'
+    }],
+    polyline: {
+      points: [{
+          latitude: 31.968768,
+          longitude: 118.798346
+        },
+        {
+          latitude: 31.963786,
+          longitude: 118.796436
+        },
+        {
+          latitude: 31.955846,
+          longitude: 118.794812
+        }
+      ],
+      color: '#45326E'
+    },
+    circles: {
+      latitude: 31.968768,
+      longitude: 118.798346,
+      color: "45326Eaa",
+      fillColor: '#ffffffaa',
+      radius: '50'
+    },
+    chooseImage: ''
+  },
+  // 结束录音
+  stop: function () {
+    
+  },
+  // 开始录音
+  start: function () {
+
+  },
+  // 选择图片
+  chooseImage: function () {
+    var this_ = this;
+    wx.chooseImage({
+      count: 2,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        console.log(res)
+        this_.data.chooseImage = res.tempFilePaths[0];
+        this_.setData({
+          chooseImage: res.tempFilePaths[0]
+        })
+      }
+    })
+  },
+  // 获取图片信息
+  getImageInfo: function () {
+    let this_ = this;
+    wx.getImageInfo({
+      src: this_.data.chooseImage,
+      success: function (res) {
+        console.log(res);
+        wx.showToast({
+          icon: 'no',
+          title: res.path,
+        })
+      }
+    })
+  },
+  // 保存图片
+  saveImage: function () {
+    var this_ = this;
+    wx.saveImageToPhotosAlbum({
+      filePath: this_.data.chooseImage,
+      success: function (res) {
+        console.log(res);
+        wx.showToast({
+          title: "ok",
+        })
+      }
+    })
+  },
+  // 预览图片
+  previewImage: function () {
+    let this_ = this;
+    wx.previewImage({
+      urls: [this_.data.chooseImage],
+    })
+  },
+  // 发送请求
+  baiduSearch: function () {
+    request({
+      url: 't-sczyxt-user-netgate/user_trends',
+      method: 'POST',
+      port: 8967,
+      data: {},
+      header: {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+    }).then((res) => {
+      console.log(res);
+    })
+  },
+  // 拍照
+  takePhoto: function () {
+    this.ctx.takePhoto({
+      quality: 'high',
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          phohSrc: res.tempImagePath
+        })
+      }
+    })
+  },
+  //录像
+  startRecord() {
+    this.ctx.startRecord({
+      success: (res) => {
+        console.log('startRecord')
+      }
+    })
+  },
+  // 结束录像 
+  stopRecord() {
+    this.ctx.stopRecord({
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          src: res.tempThumbPath,
+          videoSrc: res.tempVideoPath
+        })
+      }
+    })
   },
   // 关闭弹幕
   clerDanmu: function () {
@@ -152,8 +335,8 @@ Page({
       danmuList: danmu
     })
 
-    console.log(this.data.danmuList)
-    
+    console.log(this.vedioCtx)
+
   },
   // 播放
   audioPlay: function () {
@@ -298,17 +481,6 @@ Page({
   checkBoxChange: function (e) {
     // 多选框的选中数据集合
     console.log(e.detail.value)
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {},
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   /**

@@ -439,18 +439,51 @@
   <view class="title">裁剪模式</view>
   <image src="{{poster}}" mode="bottom right"></image>
   <view class="title">裁剪模式，只显示右下</view>
-</view> -->
-<!-- http://1252596634.vod2.myqcloud.com/2999b935vodtranscq1252596634/77cc4d725285890818077040768/coverBySnapshot_10_0.jpg -->
-
-<!-- http://1252596634.vod2.myqcloud.com/52afcb8dvodcq1252596634/77cc4d725285890818077040768/U0ZqA1QnqdQA.mp4 -->
-
-<!-- 	downloadVideo.mp4 -->
+</view> 
 <view class="demo-box">
   <view class="title">视频组件</view>
-  <video src="{{videoSrc}}"
+  <video id="myVedio" src="{{videoSrc}}"
     poster="http://1252596634.vod2.myqcloud.com/2999b935vodtranscq1252596634/77cc4d725285890818077040768/coverBySnapshot_10_0.jpg"
     danmu-list="{{danmuList}}"></video>
   <button type="mini" bindtap="addDanmu">添加弹幕</button>
   <button type="mini" bindtap="openDanmu">开启弹幕</button>
   <button type="mini" bindtap="clerDanmu">关闭弹幕</button>
+</view> 
+
+<view class="title">camera--组件的使用</view>
+<view class="demp-box">
+  <view class="title">开启相机</view>
+  <camera flash="off" device-position="back" binderror="error" style="width:100%; height:300rpx;"></camera>
+  <button type="mini" bindtap="takePhoto">拍照</button>
+  <image wx:if="{{phohSrc}}" mode="widthFix" src="{{phohSrc}}"></image>
+  <view class="btn-area">
+    <button type="primary" bindtap="startRecord">开始录像</button>
+  </view>
+  <view class="btn-area">
+    <button type="primary" bindtap="stopRecord">结束录像</button>
+  </view>
+  <view class="title">预览</view>
+  <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
+  <video wx:if="{{videoSrcs}}" class="video" src="{{videoSrcs}}"></video>
+</view>
+<map latitude="31.968427" longitude="118.798891" markers="{{markers}}" polyline="{{polyline}}" circles="{{circles}}"></map> 
+
+<view class="title">网络请求</view>
+<button type="primary" bindtap="baiduSearch">百度一下</button>
+
+<view class="title">图片管理</view>
+<view class="demo-box">
+  <view class="title">wx.getLocation(OBJECT)</view>
+  <image class="title" src="{{chooseImage}}" mode="aspectFit"></image>
+  <button bindtap="chooseImage">选择图片</button>
+  <button bindtap="previewImage">预览图片</button>
+  <button bindtap="getImageInfo">图片信息</button>
+  <button bindtap="saveImage">保存图片</button>
+</view> -->
+
+<view class="title">录音管理</view>
+<view class="demo-box">
+  <view class="title">录音管理</view>
+  <button type="primary" bindtap="start">开始录音</button>
+  <button type="primary" bindtap="stop">结束录音录音</button>
 </view>
