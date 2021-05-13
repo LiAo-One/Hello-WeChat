@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/mine/index",
     "pages/shoppingCart/index",
     "pages/sort/index",
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/index",
-    "pages/mine/index",
     "pages/new/index"
   ],
   "window": {

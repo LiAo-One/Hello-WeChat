@@ -1,2 +1,5 @@
-<!--pages/mine/index.wxml-->
-<text>pages/mine/index.wxml</text>
+<view class="title">背景音频管理</view>
+<view class="demo-box">
+  <button bindtap="play">播放</button>
+  <button bindtap="pause">暂停</button>
+</view>

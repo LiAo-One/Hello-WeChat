@@ -479,11 +479,11 @@
   <button bindtap="previewImage">预览图片</button>
   <button bindtap="getImageInfo">图片信息</button>
   <button bindtap="saveImage">保存图片</button>
-</view> -->
+</view> 
 
 <view class="title">录音管理</view>
 <view class="demo-box">
   <view class="title">录音管理</view>
   <button type="primary" bindtap="start">开始录音</button>
   <button type="primary" bindtap="stop">结束录音录音</button>
-</view>
+</view>-->

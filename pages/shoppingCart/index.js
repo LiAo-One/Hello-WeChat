@@ -2,7 +2,7 @@
 import request from '../../utils/network.js'
 Page({
 
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -173,11 +173,26 @@ Page({
   },
   // 结束录音
   stop: function () {
-    
+    this.rm.stop();
   },
   // 开始录音
   start: function () {
+    const options = {
+      // 录音时长
+      duration: 1000,
+      // 采样率
+      sampleRate: 44100,
+      // 录音通道数
+      numberOfChannels: 1,
+      // 编码码率
+      encodeBitRate: 192000,
+      // 音频格式
+      format: 'aac',
+      // 帧大小
+      frameSize: 50
+    }
 
+    this.rm.start(options);
   },
   // 选择图片
   chooseImage: function () {

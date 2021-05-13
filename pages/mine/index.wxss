@@ -1,1 +1,7 @@
-/* pages/mine/index.wxss */
+.demo-box {
+  margin-top: 50rpx;
+}
+
+.title {
+  text-align: center;
+}
