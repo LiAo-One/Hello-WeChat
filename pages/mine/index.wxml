@@ -1,5 +1,17 @@
-<view class="title">背景音频管理</view>
+<!-- <view class="title">背景音频管理</view>
 <view class="demo-box">
   <button bindtap="play">播放</button>
   <button bindtap="pause">暂停</button>
+</view> -->
+
+<view>视频管理</view>
+<view class="demo-box">
+  <video id="myVideo" src="{{videoSrc}}" enable-danmu danmu-btn controls></video>
+  <button type="primary" size="mini" bindtap="chooseVideo">选择视频</button>
+  <button type="primary" size="mini" bindtap="voideoPlay">播放</button>
+  <button type="primary" size="mini" bindtap="voideoPause">暂停</button>
+  <button type="primary" size="mini" bindtap="saveVideo">保存</button>
+  <input placeholder="弹幕" bindblur="bindInputBlur" />
+  <button type="primary" size="mini" bindtap="bindSendDanmu">发送弹幕</button>
+
 </view>

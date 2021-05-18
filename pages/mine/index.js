@@ -1,18 +1,77 @@
+// 随机生成颜色
+function getRandomColor() {
+  let rgb = [];
+  for (let i = 0; i < 3; i++) {
+    let color = Math.floor(Math.random() * 256).toString(16)
+    color = color.length == 1 ? '0' + color : color
+    rgb.push(color)
+  }
+
+  return '#' + rgb.join('');
+}  
 // pages/mine/index.js
 Page({
 
   /**
    * 页面的初始数据
+   * http://1252596634.vod2.myqcloud.com/52afcb8dvodcq1252596634/77cc4d725285890818077040768/U0ZqA1QnqdQA.mp4
    */
   data: {
+    videoSrc: '',
 
   },
-
+  inputeValue: '',
 
   onLoad: function (options) {
     this.bgAudioManager = wx.getBackgroundAudioManager();
-
+    this.videoContext = wx.createVideoContext('myVideo')
   },
+
+  // 更新弹幕文本
+  bindInputBlur: function (e) {
+    this.inputeValue = e.detail.value;
+  },
+  // 发送弹幕
+  bindSendDanmu: function () {
+    this.videoContext.sendDanmu({
+      text: this.inputeValue,
+      color: getRandomColor()
+    })
+  },
+  // 保存视频
+  saveVideo: function () {
+    let this_ = this;
+    wx.saveVideoToPhotosAlbum({
+      filePath: this_.data.videoSrc,
+      success: function (res) {
+        wx.showToast({
+          title: '保存成功',
+        })
+      }
+    })
+  },
+  // 暂停播放
+  voideoPause: function () {
+    this.videoContext.pause();
+  },
+  voideoPlay: function () {
+    this.videoContext.play();
+  },
+  // 选择视频
+  chooseVideo: function () {
+    let this_ = this;
+    wx.chooseVideo({
+      sourceType: ['album', 'camera'],
+      maxDuration: 60,
+      camera: 'back',
+      success: function (res) {
+        this_.setData({
+          videoSrc: res.tempFilePath
+        })
+      }
+    })
+  },
+
   // 初始化播放音频
   initialAudio: function () {
     let bgAudioManager = this.bgAudioManager;

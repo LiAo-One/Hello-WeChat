@@ -5,3 +5,13 @@
 .title {
   text-align: center;
 }
+
+input{
+  border:1rpx solid lightblue;
+  height: 90rpx;
+  margin: 10rpx;
+}
+
+button{
+  margin: 20rpx;
+}
